@@ -1,0 +1,86 @@
+<html>
+<head>
+	<meta http-equiv="refresh" content="100000000; url=home.html" />
+	<meta charset="UTF-8" />
+	<title></title>
+	<style type="text/css">
+	 	*{
+	 		margin:0;
+	 		padding:0;
+	 	}
+	 	.main{
+	 		width:100%;
+	 		position: relative;
+	 	}
+		img{
+			width:100%;
+			height:100%;
+			overflow: hidden;
+		}
+		#btn{
+			display: block;
+			position: absolute;
+			top:20px;
+			right:20px;
+			cursor:pointer;		
+		}
+		.container{
+			width:50%;
+			height:50%;
+			position: absolute;
+			text-align: center;
+			top:0;
+			right:0;
+			left:0;
+			bottom: 0;
+			margin:auto;
+			color:#fff;
+		}
+	</style>
+</head>
+<body>
+ <div class="main">	
+  <img src="images/2.jpg"><span id="btn"><h2>关闭</h2></span>
+</div>
+<div class="container">
+	<h1> <p>Hola,me llamo 磊,me apllido 孔</p>Welcome to my  responsive page</h1>
+	<h3>click the text 关闭,after 1 seconds you can enter it</h3>
+</div>
+
+  <script type="text/javascript">
+
+  var EventUtil = {
+  	addHandler: function(ele, type, handler){
+  		if(ele.addEventListener){
+  			ele.addEventListener(type, handler, false);
+  		}else if(ele.attachEvent){
+  			ele.attachEvent("on"+type, handler);
+  		}else{
+  			ele["on" + type] = handler;
+  		}
+  	},
+
+  	removeHandler: function(ele, type, handler){
+  		if(ele.removeEventListener){
+  			ele.removeEventListener(type, handler, false);
+  		}else if(ele.detachEvent){
+  			ele.detachEvent("on"+type, handler);
+  		}else{
+  			ele["on" + type] = null;
+  		}
+  	}
+  }
+
+  	window.onload=function(){
+  		var btn = document.getElementById('btn');
+  		EventUtil.addHandler('btn',"click","close");
+
+  		btn.onclick=function(){
+  			var meta=document.getElementsByTagName('meta')[0];
+  			meta.setAttribute('content','1\;home.html')
+  			// console.log(meta.getAttribute('content'));
+  		}
+  	}
+  </script>
+</body>
+</html>
