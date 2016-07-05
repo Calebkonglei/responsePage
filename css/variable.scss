@@ -1,0 +1,33 @@
+/* some defaults and variables for use throughout our sass file*/
+
+$black: #000;
+$white: #FFF;
+$grey: #f7f7f7;
+$darkgrey: #5e5e5e;
+$red: #d35136;
+$green: #27b599;
+$blue: #088ecc;
+$darkblue: #11171c;
+
+$padding: 10px;
+$margin: 10px;
+$main-width: 100px;
+
+$font-size: 14px;
+$font-family: 'Lato', sans-serif;
+$line-height: 1.4;
+
+$break-four: 1050px;
+$break-three: 760px;
+$break-two: 520px;
+$break-one: 360px;
+
+
+@import url('fonts.css');
+@import url('normalize.css');
+
+.group:after {
+	content: "";
+	display: table;
+	clear: both;
+}
